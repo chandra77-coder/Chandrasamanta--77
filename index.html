@@ -5,107 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jalpai Ganesh Puja Committee</title>
   <style>
-    /* General Reset & Font */
+    /* General Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', 'Poppins', Arial, sans-serif; }
-    body { background: #f1f5f9; color: #1f2937; }
+    body { background: #f1f5f9; color: #1f2937; scroll-behavior: smooth; }
 
     /* Header */
-    header { background: #334155; color: #ffffff; padding: 16px 24px; }
+    header { background: #334155; color: #ffffff; padding: 16px 24px; position: sticky; top:0; z-index: 100; }
     nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
     nav ul { list-style: none; display: flex; gap: 16px; flex-wrap: wrap; }
     nav ul li a { color: #e2e8f0; text-decoration: none; font-size: 14px; transition: 0.3s; }
     nav ul li a:hover { color: #38bdf8; }
 
     /* Hero Section */
-    .hero {
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #f1f5f9, #e5e7eb);
-      color: #0f172a;
-      text-align: center;
-    }
-    .hero-box {
-      max-width: 800px;
-      margin: auto;
-    }
-    .welcome-side {
-      font-size: 20px;
-      font-weight: 700;
-      color: #64748b;
-      margin-bottom: 12px; /* spacing above committee name */
-    }
-    .hero-name {
-      font-size: 42px;
-      font-weight: 900;
-      letter-spacing: 3px;
-      color: #1e40af;
-    }
-    .hero-subtitle {
-      margin-top: 20px;
-      font-size: 18px;
-      color: #475569;
-      opacity: 0.9;
-    }
+    .hero { padding: 80px 20px; background: linear-gradient(135deg, #f1f5f9, #e5e7eb); color: #0f172a; text-align: center; }
+    .hero-box { max-width: 800px; margin: auto; }
+    .welcome-side { font-size: 20px; font-weight: 700; color: #64748b; margin-bottom: 12px; }
+    .hero-name { font-size: 42px; font-weight: 900; letter-spacing: 3px; color: #1e40af; }
+    .hero-subtitle { margin-top: 20px; font-size: 18px; color: #475569; opacity: 0.9; }
 
-    /* Container & Cards */
+    /* Sections */
+    section { padding: 60px 20px; }
+    h2 { font-size: 32px; margin-bottom: 20px; color: #1e40af; text-align: center; }
+
+    /* Cards */
     .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-    }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .card { background: #ffffff; padding: 20px; border-radius: 14px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.12); }
     .card h3 { margin-bottom: 8px; color: #1e40af; }
     .card p { font-size: 14px; color: #475569; }
 
-    /* Buttons */
-    button {
-      margin-top: 16px;
-      padding: 12px 22px;
-      border: none;
-      border-radius: 10px;
-      background: #2563eb;
-      color: #ffffff;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    button:hover { background: #1d4ed8; }
-
     /* Facebook Link */
-    .facebook-link {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 16px;
-      background: #1877f2;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+    .facebook-link { display: inline-block; margin-top: 12px; padding: 10px 16px; background: #1877f2; color: white; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; }
     .facebook-link:hover { opacity: 0.9; }
 
     /* Footer */
-    footer {
-      background: #334155;
-      color: #e5e7eb;
-      text-align: center;
-      padding: 18px;
-      margin-top: 40px;
-      font-size: 13px;
-    }
+    footer { background: #334155; color: #e5e7eb; text-align: center; padding: 18px; font-size: 13px; }
 
-    /* Responsive Text */
+    /* Responsive */
     @media(max-width: 600px) {
       .hero-name { font-size: 32px; }
       .hero-subtitle { font-size: 16px; }
@@ -119,20 +56,31 @@
   <header>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#calendar">Calendar</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#connect">Connect</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
+  <!-- Hero -->
+  <section class="hero" id="hero">
     <div class="hero-box">
       <div class="welcome-side">WELCOME</div>
       <div class="hero-name">JALPAI GANESH PUJA COMMITTEE</div>
     </div>
     <p class="hero-subtitle">Celebrating devotion, culture, and togetherness</p>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p style="max-width: 800px; margin:auto; text-align:center;">
+      Jalpai Ganesh Puja Committee has been organizing Ganesh Puja with dedication, devotion, and a focus on community unity. 
+      Our mission is to preserve tradition, celebrate culture, and bring joy to everyone in the community.
+    </p>
   </section>
 
   <!-- Committee Cards -->
@@ -153,22 +101,34 @@
     </div>
   </section>
 
-  <!-- Photo Gallery -->
-  <section class="container">
-    <h2 style="text-align:center; color:#1e40af; margin-bottom:16px;">Photo & Update Gallery</h2>
+  <!-- Calendar -->
+  <section id="calendar">
+    <h2>Event Calendar</h2>
+    <p style="max-width:800px; margin:auto; text-align:center;">
+      Upcoming Ganesh Puja and community events:<br>
+      10th August - Ganesh Puja Preparations<br>
+      12th August - Main Ganesh Puja Celebration
+    </p>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="container">
+    <h2>Photo & Update Gallery</h2>
     <div class="cards">
-      <div class="card">📸 Photo / Update 1</div>
-      <div class="card">📸 Photo / Update 2</div>
-      <div class="card">📸 Photo / Update 3</div>
+      <div class="card"><img src="images/photo1.jpg" alt="Photo 1"></div>
+      <div class="card"><img src="images/photo2.jpg" alt="Photo 2"></div>
+      <div class="card"><img src="images/photo3.jpg" alt="Photo 3"></div>
     </div>
   </section>
 
-  <!-- Connect Section -->
-  <section class="container" style="text-align:center;">
-    <h2 style="color:#1e40af;">Connect With Us</h2>
-    <p style="color:#475569; margin-bottom:10px;">For any enquiries, connect with us directly on Facebook Messenger</p>
+  <!-- Connect -->
+  <section id="connect" class="container" style="text-align:center;">
+    <h2>Connect With Us</h2>
+    <p>For any enquiries, connect with us directly on Facebook Messenger</p>
     <a class="facebook-link" href="https://www.facebook.com/share/17d5CJwWmr/" target="_blank">💬 Connect Us on Facebook DM</a>
-    <p style="margin-top:16px; color:#334155; font-size:15px; font-weight:600; letter-spacing:0.3px;">📍 You can find us on Google Map by searching</p>
+    <p style="margin-top:16px; color:#334155; font-size:15px; font-weight:600; letter-spacing:0.3px;">
+      📍 You can find us on Google Map by searching
+    </p>
     <p style="color:#1e3a8a; font-size:16px; font-weight:800; letter-spacing:0.5px;">Jalpai Ganesh Puja Committee</p>
   </section>
 
@@ -176,12 +136,6 @@
   <footer>
     © 2026 Jalpai Ganesh Puja Committee | Blue • Grey • White Theme
   </footer>
-
-  <script>
-    function showMessage() {
-      alert('Thank you for visiting Jalpai Ganesh Puja Committee website');
-    }
-  </script>
 
 </body>
 </html>
